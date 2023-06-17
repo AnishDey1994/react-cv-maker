@@ -106,7 +106,9 @@
   color: var(--primary-color);
   font-size: .75rem;
 }
-
+.cvBodyRight .sectionItems{
+  margin-bottom: 15px;
+}
 .headBlock {
   font-weight: bold;
 }
@@ -128,7 +130,7 @@
 }
 
 .sm-textBlock {
-  font-size: .50rem;
+  font-size: .60rem;
 }
 
 ul{
