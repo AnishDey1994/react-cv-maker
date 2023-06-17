@@ -1,0 +1,28 @@
+.rating {
+    font-size: 24px;
+}
+
+.star {
+    color: white;
+    display: inline-block;
+}
+
+.star.filled {
+    color: gold;
+}
+
+.transparent-star {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    position: relative;
+}
+
+.transparent-star::before {
+    content: "\2606";
+    color: gold;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
