@@ -1,5 +1,5 @@
 :root {
-  --primary-color: rgb(20, 101, 223);
+  --primary-color: #6495ED;
 }
 
 .App {
@@ -112,7 +112,9 @@
 .headBlock {
   font-weight: bold;
 }
-
+.headBlockSub{
+  padding-left: 30px;
+}
 .subHeadBlock {
   font-style: italic;
 }

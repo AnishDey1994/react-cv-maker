@@ -90,7 +90,14 @@
     "skills": {
         "React JS": 5,
         "Node JS": 4,
-        "AWS": 4,
+        "AWS": {
+            "EC2": 2,
+            "S3": 2,
+            "Lambda": 4,
+            "Api Gateway": 4,
+            "Cloud Watch": 4,
+            "Dynao DB": 4
+        },
         "Redux": 5,
         "HTML,CSS": 5
     },

@@ -1,6 +1,7 @@
 import './App.css';
-import CVImage from './assets/img1.jpg';
+import CVImage from './assets/profile.jpg';
 import data from './config.json';
+import MyForm from './inputForm/inputForm';
 import Rating from './rating/rating';
 
 const name = data.name;
@@ -17,7 +18,7 @@ function App() {
       <div className='cvWrapper'>
         <div className='cvHeader'>
           <div className='cvImage'>
-            <img className='cvImage' src={CVImage} alt="My Image" />
+            <img className='cvImage' src={CVImage} alt="placeholder" />
           </div>
           <div className='cvTitle'>
             <div className='xlg-textBlock'>{name}</div>
@@ -101,8 +102,24 @@ function App() {
                 Object.entries(skills).map(([key, value], index) => (
                   value &&
                   <div className='sectionItems sm-textBlock' key={index}>
-                    <span className='headBlock'>{key}</span>
-                    <span className='subHeadBlock'><Rating value={value} /></span>
+                    {
+                      typeof value === 'object' ?
+                        <div className='headBlock'>{key}:
+                          {Object.entries(value).map(([ValueKey, ValueRating], index) => (
+                            <>
+                              <div className='headBlockSub'>
+                                <span className='headBlock'>{ValueKey}</span>
+                                <span className='subHeadBlock'><Rating value={ValueRating} /></span>
+                              </div>
+                            </>
+                          ))}
+                        </div> :
+                        <>
+                          <span className='headBlock'>{key}</span>
+                          <span className='subHeadBlock'><Rating value={value} /></span>
+                        </>
+                    }
+
                   </div>
                 ))
               }
