@@ -2,6 +2,7 @@ import './App.css';
 import CVImage from './assets/profile.jpg';
 import data from './config.json';
 import MyForm from './inputForm/inputForm';
+import JSONEditor from './jsonEditor/jsonEditor';
 import Rating from './rating/rating';
 
 const name = data.name;
@@ -15,7 +16,8 @@ const language = data.language;
 function App() {
   return (
     <div className="App">
-      <div className='cvWrapper'>
+      <JSONEditor />
+      {/* <div className='cvWrapper'>
         <div className='cvHeader'>
           <div className='cvImage'>
             <img className='cvImage' src={CVImage} alt="placeholder" />
@@ -139,7 +141,7 @@ function App() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
