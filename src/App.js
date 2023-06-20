@@ -13,22 +13,15 @@ const App = () => {
 
   const [jsonData, setJsonData] = useState(initialJsonData);
   const [isEditMode, setEditMode] = useState(false);
-  const [isPrinting, setIsPrinting] = useState(false);
 
   const handleViewCV = (editedJson) => {
     setEditMode(!isEditMode);
     setJsonData(editedJson);
   }
-  const handlePrint = () => {
-    setIsPrinting(true);
-    setTimeout(() => {
-      window.print();
-    }, 2000);
-    //setIsPrinting(false);
-  }
+
   return (
     <div className="App">
-      {!isEditMode && !isPrinting ?
+      {!isEditMode ?
         <div className='appButtonController'>
           <button className="cvEditButton" onClick={() => setEditMode(!isEditMode)}>
             {isEditMode ? 'View' : 'Edit'}

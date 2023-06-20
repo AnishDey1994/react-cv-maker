@@ -8,58 +8,41 @@ function JSONEditor(props) {
 
   const [jsonData, setJsonData] = useState(initialJsonData);
   const [editedData, setEditedData] = useState(initialJsonData);
-  const [isValidJson, setIsValidJson] = useState(true);
+  const [jsonError, setJsonError] = useState(false);
 
   const handleJsonChange = (data) => {
-    console.log('**handleJsonChange', data);
     setEditedData(data.jsObject);
-    setIsValidJson(true);
+    setJsonError(data.error);
   };
 
-  const handleSave = () => {
-    try {
-      JSON.parse(JSON.stringify(editedData));
-      setJsonData(editedData);
-      console.log('Saved JSON data:', editedData);
-    } catch (error) {
-      setIsValidJson(false);
-      console.error('Invalid JSON format:', error);
-    }
-  };
+  const handleSave = () => { };
 
   const handleView = () => {
-    try {
-      setJsonData(editedData);
-      console.log('Saved JSON data:', editedData);
-      props.viewCv(editedData);
-    } catch (error) {
-      setIsValidJson(false);
-      console.error('Invalid JSON format:', error);
-    }
+    setJsonData(editedData);
+    props.viewCv(editedData);
   };
 
   // const handleReset = () => {
   //   setEditedData(jsonData);
-  //   setIsValidJson(true);
+  //   setJsonError(true);
   // };
 
   return (
     <div className="json-editor-wrapper">
-      <h2 className="json-editor-heading">JSON Editor</h2>
-      {!isValidJson && (
-        <p className="json-editor-validation-error">Invalid JSON format!</p>
-      )}
+      <div className={`json-editor-validation-error ${jsonError && 'errorVisible'}`}>
+        {jsonError && `Invalid JSON format!! Line: ${jsonError.line}, ${jsonError.reason}`}
+      </div>
+      <div className="json-editor-heading">CV Editor</div>
       <JSONInput
         id="json-editor"
         placeholder={jsonData}
         locale={locale}
         height="500px"
         width="100%"
-        onChange={handleJsonChange}
         onBlur={handleJsonChange}
       />
       <div className="json-editor-buttons">
-        <button className="json-editor-reset-button" onClick={handleView}>
+        <button className={`json-editor-reset-button ${jsonError && 'disabled'}`} onClick={handleView} disabled={jsonError && true}>
           View
         </button>
         <button className="json-editor-save-button disabled" onClick={handleSave} disabled={true} title="Coming soon">
