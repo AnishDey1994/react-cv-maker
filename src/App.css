@@ -38,23 +38,7 @@
   background-color: #fa8f88;
 }
 
-@media print {
-  body {
-    margin: 0;
-    padding: 0px;
-    min-height: 100vh;
-    box-sizing: border-box;
-  }
-
-  html, body {
-    overflow: auto;
-  }
-
-  .printable-div {
-    margin: 0;
-    padding: 0px;
-    page-break-inside: avoid;
-    page-break-before: always;
-    box-sizing: border-box;
-  }
+.disabled{
+  pointer-events: none;
+  opacity: 0.5;
 }

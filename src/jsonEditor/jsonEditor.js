@@ -62,7 +62,7 @@ function JSONEditor(props) {
         <button className="json-editor-reset-button" onClick={handleView}>
           View
         </button>
-        <button className="json-editor-save-button" onClick={handleSave}>
+        <button className="json-editor-save-button disabled" onClick={handleSave} disabled={true} title="Coming soon">
           Save
         </button>
       </div>

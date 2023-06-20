@@ -33,9 +33,6 @@ const App = () => {
           <button className="cvEditButton" onClick={() => setEditMode(!isEditMode)}>
             {isEditMode ? 'View' : 'Edit'}
           </button>
-          {/* <button className="cvPrintButton" onClick={() => handlePrint()}>
-            Print
-          </button> */}
           <ReactToPrint
             trigger={() => <button className="cvPrintButton" >Print</button>}
             content={() => printableRef.current}
