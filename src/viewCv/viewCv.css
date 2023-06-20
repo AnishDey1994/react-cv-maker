@@ -145,3 +145,22 @@ ul {
     padding-inline-start: 10px;
 }
 
+@media only screen and (max-width: 767px) {
+    .cvImage{
+        height: 100px;
+    }
+    .cvHeader{
+        grid-template-columns: 30% 70%;
+    }
+
+    .cvBody{
+        grid-template-columns: auto;
+    }
+
+    .xlg-textBlock {
+        font-size: 1.5rem;
+    }
+    .lg-textBlock {
+        font-size: .90rem;
+    }
+}  
