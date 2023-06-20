@@ -1,140 +1,44 @@
-:root {
-  --primary-color: #6495ED;
-}
-
 .App {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   letter-spacing: 1px;
   word-spacing: 2px;
   width: 100%;
   height: 100%;
   padding: 0;
-  margin: 0;
+  margin-top: 15px;
 }
 
-.cvWrapper {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
+.appButtonController {
+  text-align: right;
 }
 
-.cvHeader {
-  display: grid;
-  grid-template-columns: 20% 80%;
-  min-height: 100%;
-  padding: 10px;
-  background-color: var(--primary-color);
+.appButtonController button {
+  padding: 10px 15px;
+  font-size: 16px;
+  margin-right: 10px;
 }
 
-.cvImage {
-  height: 150px;
-  border-radius: 50px;
+.cvEditButton {
+  background-color: #4caf50;
+  color: #fff;
 }
 
-.cvTitle {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-weight: 500;
-  color: white;
+.cvEditButton:hover {
+  background-color: #8dd78f;
 }
 
-.cvBody {
-  display: grid;
-  grid-template-columns: 75% 25%;
+.cvPrintButton {
+  background-color: #f44336;
+  color: #fff;
 }
 
-.cvBodyLeft {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 10px;
+.cvPrintButton:hover {
+  background-color: #fa8f88;
 }
 
-.cvHighlights {
-  display: flex;
-  flex-direction: column;
-}
-.cvHighlightsItems{
-  display: flex;
-}
-.cvHighlightsItems svg {
-  padding: 0 5px;
-}
-
-.cvSectionItemWrapper {
-  display: flex;
-  flex-direction: row;
-  gap: 25px;
-}
-
-.cvSectionItemDuration {
-  flex: 1;
-}
-
-.cvSectionItemDetails {
-  flex: 3;
-}
-
-.jobResponsibilities {
-  display: flex;
-  flex-direction: column;
-}
-.jobResponsibilitiesItems{
-  display: flex;
-}
-.jobResponsibilitiesItems svg {
-  padding: 0 5px;
-  width: 15px;
-  height: 15px
-}
-
-.cvBodyRight {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  padding: 20px;
-  background-color: #f4f4f4;
-}
-
-.sectionItems {
-  display: flex;
-  flex-direction: column;
-}
-
-.sectionTitle {
-  color: var(--primary-color);
-  font-size: .75rem;
-}
-.cvBodyRight .sectionItems{
-  margin-bottom: 15px;
-}
-.headBlock {
-  font-weight: bold;
-}
-.headBlockSub{
-  padding-left: 30px;
-}
-.subHeadBlock {
-  font-style: italic;
-}
-
-.xlg-textBlock {
-  font-size: 2rem;
-}
-
-.lg-textBlock {
-  font-size: 1rem;
-}
-
-.md-textBlock {
-  font-size: .80rem;
-}
-
-.sm-textBlock {
-  font-size: .60rem;
-}
-
-ul{
-  padding-inline-start: 10px;
+.disabled{
+  pointer-events: none;
+  opacity: 0.5;
 }
