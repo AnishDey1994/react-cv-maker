@@ -8,7 +8,7 @@ const ViewCv = ({ jsonData }) => {
     const professionalInformation = jsonData.professionalInformation;
     const education = jsonData.educationInformation;
     const cvHighlights = jsonData.cvHighlights;
-    const skills = jsonData.skills;
+    const techStack = jsonData.techStack;
     const language = jsonData.language;
 
     return (
@@ -93,32 +93,39 @@ const ViewCv = ({ jsonData }) => {
                         }
                     </div>
                     <div className='skills'>
-                        <div className='sectionTitle'>Skills</div>
+                        <div className='sectionTitle'>Tech stack</div>
                         <hr />
                         {
-                            Object.entries(skills).map(([key, value], index) => (
-                                value &&
-                                <div className='sectionItems sm-textBlock' key={index}>
-                                    {
-                                        typeof value === 'object' ?
-                                            <div className='headBlock'>{key}:
-                                                {Object.entries(value).map(([ValueKey, ValueRating], index) => (
-                                                    <>
-                                                        <div className='headBlockSub' key={index}>
-                                                            <span className='headBlock'>{ValueKey}</span>
-                                                            <span className='subHeadBlock'><Rating value={ValueRating} /></span>
-                                                        </div>
-                                                    </>
-                                                ))}
-                                            </div> :
-                                            <>
-                                                <span className='headBlock'>{key}</span>
-                                                <span className='subHeadBlock'><Rating value={value} /></span>
-                                            </>
-                                    }
+                            Array.isArray(techStack) ?
+                                techStack.map((skill, index) => (
+                                    <div className='sectionItems sm-textBlock' key={index}>
+                                        {skill}
+                                    </div>
+                                ))
+                                :
+                                Object.entries(techStack).map(([key, value], index) => (
+                                    value &&
+                                    <div className='sectionItems sm-textBlock' key={index}>
+                                        {
+                                            typeof value === 'object' ?
+                                                <div className='headBlock'>{key}:
+                                                    {Object.entries(value).map(([ValueKey, ValueRating], index) => (
+                                                        <>
+                                                            <div className='headBlockSub' key={index}>
+                                                                <span className='headBlock'>{ValueKey}</span>
+                                                                <span className='subHeadBlock'><Rating value={ValueRating} /></span>
+                                                            </div>
+                                                        </>
+                                                    ))}
+                                                </div> :
+                                                <>
+                                                    <span className='headBlock'>{key}</span>
+                                                    <span className='subHeadBlock'><Rating value={value} /></span>
+                                                </>
+                                        }
 
-                                </div>
-                            ))
+                                    </div>
+                                ))
                         }
                     </div>
                     <div className='language'>

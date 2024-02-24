@@ -77,17 +77,27 @@
         }
     ],
     "cvHighlights": {
-        "currentRole": "Senior software developer",
+        "currentRole": "Full stack software developer",
         "cvSummary": [
+            "Current tech stack: React, Node, AWS",
             "Full-stack development expertise.",
             "Strong knowledge of software development methodologies (Agile, Scrum).",
             "Team leadership and collaboration.",
             "Analytical and problem-solving abilities.",
             "Excellent communication and interpersonal skills.",
-            "Love to take part in cultural activities."
+            "Love to take part in team building and cultural activities."
         ]
     },
-    "skills": {
+    "techStack": [
+        "React JS",
+        "Node JS",
+        "React native",
+        "AWS (Lambda, API Gateway, Dynamo DB, Cloud Watch, S3, SNS, )",
+        "Jenkins",
+        "Terraform",
+        "Git"
+    ],
+    "techStack1": {
         "React JS": 5,
         "Node JS": 4,
         "AWS": {
